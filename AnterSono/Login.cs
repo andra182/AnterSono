@@ -44,15 +44,12 @@ namespace AnterSono
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Environment.Exit(1);
-            }
+            this.Hide();
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(1);    
+            //Environment.Exit(1);    
         }
     }
 }

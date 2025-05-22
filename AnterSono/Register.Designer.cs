@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,15 +48,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(33, 527);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 27);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.Location = new System.Drawing.Point(33, 527);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 27);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // linkLabel1
             // 
@@ -70,15 +70,15 @@
             this.linkLabel1.Text = "Sudah mempunyai akun? Login";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.Location = new System.Drawing.Point(155, 527);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 27);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegister.Location = new System.Drawing.Point(155, 527);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(98, 27);
+            this.btnRegister.TabIndex = 17;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPassword
             // 
@@ -196,15 +196,16 @@
             this.txtAlamat.Size = new System.Drawing.Size(245, 51);
             this.txtAlamat.TabIndex = 26;
             this.txtAlamat.Text = "";
+            this.txtAlamat.TextChanged += new System.EventHandler(this.txtAlamat_TextChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AnterSono.Properties.Resources.register;
-            this.pictureBox1.Location = new System.Drawing.Point(399, 0);
+            this.pictureBox1.Image = global::AnterSono.Properties.Resources.RegisterPage;
+            this.pictureBox1.Location = new System.Drawing.Point(379, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(344, 578);
+            this.pictureBox1.Size = new System.Drawing.Size(364, 581);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
             // Register
@@ -212,15 +213,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 579);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtAlamat);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNoHp);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.label5);
@@ -228,7 +230,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Register";
             this.Text = "Register";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
@@ -239,11 +240,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label5;
@@ -257,5 +256,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RichTextBox txtAlamat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

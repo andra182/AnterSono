@@ -24,11 +24,7 @@ namespace AnterSono
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Login login = new Login();
-                login.Close();
-            }
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,15 +34,15 @@ namespace AnterSono
 
         private void Register_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Login login = new Login();
-                login.Close();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show("Apakah anda yakin?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            //{
+            //    Login login = new Login();
+            //    login.Close();
+            //}
+            //else
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -54,6 +50,11 @@ namespace AnterSono
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void txtAlamat_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
