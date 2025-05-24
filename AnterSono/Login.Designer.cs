@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.linkRegister = new System.Windows.Forms.LinkLabel();
@@ -89,9 +89,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 125);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Email";
+            this.label4.Text = "Email atau No HP";
             // 
             // label5
             // 
@@ -103,12 +103,12 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Password";
             // 
-            // txtEmail
+            // txtLogin
             // 
-            this.txtEmail.Location = new System.Drawing.Point(28, 148);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(245, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtLogin.Location = new System.Drawing.Point(28, 148);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(245, 20);
+            this.txtLogin.TabIndex = 5;
             // 
             // txtPassword
             // 
@@ -126,6 +126,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // linkRegister
             // 
@@ -158,7 +159,7 @@
             this.Controls.Add(this.linkRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -183,7 +184,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel linkRegister;

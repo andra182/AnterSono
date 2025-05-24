@@ -46,10 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserControl\DAHome.cs">
+    <Compile Include="DashboardKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardKurir.Designer.cs">
+      <DependentUpon>DashboardKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardPengirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardPengirim.Designer.cs">
+      <DependentUpon>DashboardPengirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="FormPaket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaket.Designer.cs">
+      <DependentUpon>FormPaket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityHelper.cs" />
+    <Compile Include="UserControl\DP\DPHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\DAHome.Designer.cs">
+    <Compile Include="UserControl\DP\DPHome.Designer.cs">
+      <DependentUpon>DPHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DK\DKHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DK\DKHome.Designer.cs">
+      <DependentUpon>DKHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DA\Pengaturan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DA\Pengaturan.Designer.cs">
+      <DependentUpon>Pengaturan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMKurir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMKurir.Designer.cs">
+      <DependentUpon>DAMKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMPengirim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMPengirim.Designer.cs">
+      <DependentUpon>DAMPengirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DA\DAHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DA\DAHome.Designer.cs">
       <DependentUpon>DAHome.cs</DependentUpon>
     </Compile>
     <Compile Include="DashboardAdmin.cs">
@@ -83,7 +133,28 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl\DAHome.resx">
+    <EmbeddedResource Include="DashboardKurir.resx">
+      <DependentUpon>DashboardKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardPengirim.resx">
+      <DependentUpon>DashboardPengirim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaket.resx">
+      <DependentUpon>FormPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DP\DPHome.resx">
+      <DependentUpon>DPHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DK\DKHome.resx">
+      <DependentUpon>DKHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DA\DAMKurir.resx">
+      <DependentUpon>DAMKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DA\DAMPengirim.resx">
+      <DependentUpon>DAMPengirim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DA\DAHome.resx">
       <DependentUpon>DAHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardAdmin.resx">
@@ -102,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DA\Pengaturan.resx">
+      <DependentUpon>Pengaturan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,5 +196,15 @@
   <ItemGroup>
     <None Include="Resources\RegisterPage.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardAdmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardKurir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardPengirim.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
