@@ -11,30 +11,29 @@ using System.Windows.Forms;
 
 namespace AnterSono
 {
-    public partial class DAMPengirim : UserControl
+    public partial class DAMAdmin : UserControl
     {
-        public DAMPengirim()
+        public DAMAdmin()
         {
             InitializeComponent();
         }
 
-        private void DAMPengirim_Load(object sender, EventArgs e)
+        private void btnAddAdmin_Click(object sender, EventArgs e)
         {
-            LoadDataPengirim();
+            FormAdmin formAdmin = new FormAdmin();
+            formAdmin.ShowDialog();
         }
 
-        private void LoadDataPengirim()
+        private void LoadDataAdmin()
         {
             using (SqlConnection conn = Database.GetConnection())
             {
                 string query = @"
-                            SELECT 
-                                id_pengirim AS [ID Pengirim],
-                                nama_pengirim AS [Nama Pengirim],
-                                email AS [Email Pengirim],
-                                no_hp_pengirim AS [No HP Pengirim],
-                                alamat_pengirim AS [Alamat Pengirim]
-                            FROM pengirim";
+            SELECT 
+                nama_admin AS [Nama Admin],
+                email AS [Email Admin],
+                no_hp_admin AS [No HP Admin]
+            FROM admin";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -46,15 +45,14 @@ namespace AnterSono
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DAMAdmin_Load(object sender, EventArgs e)
         {
-            DetailPengirim detailPengirim = new DetailPengirim(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID Pengirim"].Value));
-            detailPengirim.ShowDialog();
+            LoadDataAdmin();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadDataPengirim();
+            LoadDataAdmin();
         }
     }
 }

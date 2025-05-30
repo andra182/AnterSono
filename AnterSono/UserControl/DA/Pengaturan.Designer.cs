@@ -186,6 +186,7 @@
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Simpan";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Pengaturan
             // 
@@ -209,6 +210,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Pengaturan";
             this.Size = new System.Drawing.Size(625, 422);
+            this.Load += new System.EventHandler(this.Pengaturan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

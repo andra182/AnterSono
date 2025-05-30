@@ -12,10 +12,10 @@ namespace AnterSono
 {
     public partial class DashboardPengirim : Form
     {
-        public DashboardPengirim()
+        public DashboardPengirim(int id)
         {
             InitializeComponent();
-            DPHome home = new DPHome();
+            DPHome home = new DPHome(id);
             addUserControl(home);
         }
 

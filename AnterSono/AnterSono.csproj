@@ -46,6 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailPaket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailPaket.Designer.cs">
+      <DependentUpon>DetailPaket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPengirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailPengirim.Designer.cs">
+      <DependentUpon>DetailPengirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailKurir.Designer.cs">
+      <DependentUpon>DetailKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKurir.Designer.cs">
+      <DependentUpon>FormKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\DA\DAMAdmin.Designer.cs">
+      <DependentUpon>DAMAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashboardKurir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +100,12 @@
     </Compile>
     <Compile Include="FormPaket.Designer.cs">
       <DependentUpon>FormPaket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfirmasiPembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfirmasiPembayaran.Designer.cs">
+      <DependentUpon>KonfirmasiPembayaran.cs</DependentUpon>
     </Compile>
     <Compile Include="SecurityHelper.cs" />
     <Compile Include="UserControl\DP\DPHome.cs">
@@ -133,6 +175,24 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DetailPaket.resx">
+      <DependentUpon>DetailPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailPengirim.resx">
+      <DependentUpon>DetailPengirim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailKurir.resx">
+      <DependentUpon>DetailKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKurir.resx">
+      <DependentUpon>FormKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\DA\DAMAdmin.resx">
+      <DependentUpon>DAMAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardKurir.resx">
       <DependentUpon>DashboardKurir.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaket.resx">
       <DependentUpon>FormPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfirmasiPembayaran.resx">
+      <DependentUpon>KonfirmasiPembayaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\DP\DPHome.resx">
       <DependentUpon>DPHome.cs</DependentUpon>
@@ -205,6 +268,20 @@
   <ItemGroup>
     <None Include="Resources\DashboardPengirim.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\PDana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIndomaret.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PShopeepay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PGopay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PCod.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,6 +72,7 @@
             this.btnCekResi.TabIndex = 3;
             this.btnCekResi.Text = "Cek";
             this.btnCekResi.UseVisualStyleBackColor = true;
+            this.btnCekResi.Click += new System.EventHandler(this.btnCekResi_Click);
             // 
             // btnRegister
             // 

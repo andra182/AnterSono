@@ -12,11 +12,18 @@ namespace AnterSono
 {
     public partial class DashboardAdmin : Form
     {
-        public DashboardAdmin()
+        public DashboardAdmin(bool masteradmin = false)
         {
             InitializeComponent();
             DAHome home = new DAHome();
             addUserControl(home);
+            if (masteradmin)
+            {
+                panel6.Visible = true;
+            } else
+            {
+                panel6.Visible = false;
+            }
         }
 
         private void manajemenKurirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +45,7 @@ namespace AnterSono
             panel3.BackColor = Color.FromArgb(6, 122, 255);
             panel4.BackColor = Color.FromArgb(6, 122, 255);
             panel5.BackColor = Color.FromArgb(6, 122, 255);
+            panel6.BackColor = Color.FromArgb(6, 122, 255);
             DAHome home = new DAHome();
             addUserControl(home);
         }
@@ -48,6 +56,7 @@ namespace AnterSono
             panel2.BackColor = Color.FromArgb(6, 122, 255);
             panel4.BackColor = Color.FromArgb(6, 122, 255);
             panel5.BackColor = Color.FromArgb(6, 122, 255);
+            panel6.BackColor = Color.FromArgb(6, 122, 255);
             DAMKurir kurir = new DAMKurir();
             addUserControl(kurir);
         }
@@ -58,6 +67,7 @@ namespace AnterSono
             panel3.BackColor = Color.FromArgb(6, 122, 255);
             panel2.BackColor = Color.FromArgb(6, 122, 255);
             panel5.BackColor = Color.FromArgb(6, 122, 255);
+            panel6.BackColor = Color.FromArgb(6, 122, 255);
             DAMPengirim pengirim = new DAMPengirim();
             addUserControl(pengirim);
         }
@@ -68,8 +78,19 @@ namespace AnterSono
             panel3.BackColor = Color.FromArgb(6, 122, 255);
             panel4.BackColor = Color.FromArgb(6, 122, 255);
             panel2.BackColor = Color.FromArgb(6, 122, 255);
+            panel6.BackColor = Color.FromArgb(6, 122, 255);
             Pengaturan pengaturan = new Pengaturan();
             addUserControl(pengaturan);
+        }
+        private void MAdmin_Click(object sender, EventArgs e)
+        {
+            panel6.BackColor = Color.FromArgb(0, 90, 192);
+            panel3.BackColor = Color.FromArgb(6, 122, 255);
+            panel4.BackColor = Color.FromArgb(6, 122, 255);
+            panel2.BackColor = Color.FromArgb(6, 122, 255);
+            panel5.BackColor = Color.FromArgb(6, 122, 255);
+            DAMAdmin admin = new DAMAdmin();
+            addUserControl(admin);
         }
     }
 }

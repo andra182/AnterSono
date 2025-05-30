@@ -12,11 +12,13 @@ namespace AnterSono
 {
     public partial class DashboardKurir : Form
     {
-        public DashboardKurir()
+        private int idKurir;
+        public DashboardKurir(int idKurir)
         {
             InitializeComponent();
-            DKHome home = new DKHome();
+            DKHome home = new DKHome(idKurir);
             addUserControl(home);
+            this.idKurir = idKurir;
         }
 
         private void addUserControl(UserControl userControl)

@@ -28,5 +28,17 @@ namespace AnterSono
             Register register = new Register();
             register.Show();
         }
+
+        private void btnCekResi_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCekResi.Text))
+            {
+                MessageBox.Show("Harap masukkan nomor resi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DetailPaket detailPaket = new DetailPaket(txtCekResi.Text);
+            detailPaket.Show();
+        }
     }
 }

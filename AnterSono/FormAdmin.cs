@@ -11,21 +11,11 @@ using System.Windows.Forms;
 
 namespace AnterSono
 {
-    public partial class Register : Form
+    public partial class FormAdmin : Form
     {
-        public Register()
+        public FormAdmin()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -33,8 +23,7 @@ namespace AnterSono
             if (string.IsNullOrWhiteSpace(txtNama.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtNoHp.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text) ||
-                string.IsNullOrWhiteSpace(txtAlamat.Text))
+                string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("Harap isi semua kolom!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -43,7 +32,6 @@ namespace AnterSono
             string nama = txtNama.Text;
             string email = txtEmail.Text;
             string noHp = txtNoHp.Text;
-            string alamat = txtAlamat.Text;
             string passwordPlain = txtPassword.Text;
             string passwordHash = SecurityHelper.HashPassword(passwordPlain);
 
@@ -52,17 +40,16 @@ namespace AnterSono
                 try
                 {
                     conn.Open();
-                    string query = @"INSERT INTO pengirim 
-                                (nama_pengirim, alamat_pengirim, no_hp_pengirim, email, password)
-                                 VALUES (@nama, @alamat, @nohp, @email, @password)";
+                    string query = @"INSERT INTO admin 
+                                (nama_admin, no_hp_admin, email, password)
+                                 VALUES (@nama, @nohp, @email, @password)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@nama", nama);
-                        cmd.Parameters.AddWithValue("@alamat", alamat);
                         cmd.Parameters.AddWithValue("@nohp", noHp);
                         cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@password", passwordHash); 
+                        cmd.Parameters.AddWithValue("@password", passwordHash);
 
                         int result = cmd.ExecuteNonQuery();
                         if (result > 0)
@@ -70,8 +57,6 @@ namespace AnterSono
                             MessageBox.Show("Registrasi berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearForm();
 
-                            Login login = new Login();
-                            login.Show();
                             this.Hide();
                         }
                         else
@@ -92,33 +77,7 @@ namespace AnterSono
             txtNama.Clear();
             txtEmail.Clear();
             txtNoHp.Clear();
-            txtAlamat.Clear();
             txtPassword.Clear();
-        }
-
-        private void Register_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //if (MessageBox.Show("Apakah anda yakin?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            //{
-            //    Login login = new Login();
-            //    login.Close();
-            //}
-            //else
-            //{
-            //    e.Cancel = true;
-            //}
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
-
-        private void txtAlamat_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
