@@ -72,6 +72,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btnBatalkanPaket = new System.Windows.Forms.Button();
             this.cmbStatusPengiriman = new System.Windows.Forms.ComboBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtJarak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBerat)).BeginInit();
             this.panel6.SuspendLayout();
@@ -83,7 +84,7 @@
             this.btnAmbilTugasPaket.FlatAppearance.BorderSize = 0;
             this.btnAmbilTugasPaket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAmbilTugasPaket.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAmbilTugasPaket.Location = new System.Drawing.Point(297, 656);
+            this.btnAmbilTugasPaket.Location = new System.Drawing.Point(38, 702);
             this.btnAmbilTugasPaket.Name = "btnAmbilTugasPaket";
             this.btnAmbilTugasPaket.Size = new System.Drawing.Size(161, 23);
             this.btnAmbilTugasPaket.TabIndex = 49;
@@ -494,7 +495,7 @@
             this.btnBatalkanPaket.FlatAppearance.BorderSize = 0;
             this.btnBatalkanPaket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBatalkanPaket.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBatalkanPaket.Location = new System.Drawing.Point(473, 656);
+            this.btnBatalkanPaket.Location = new System.Drawing.Point(475, 702);
             this.btnBatalkanPaket.Name = "btnBatalkanPaket";
             this.btnBatalkanPaket.Size = new System.Drawing.Size(102, 23);
             this.btnBatalkanPaket.TabIndex = 73;
@@ -511,12 +512,27 @@
             this.cmbStatusPengiriman.TabIndex = 74;
             this.cmbStatusPengiriman.SelectionChangeCommitted += new System.EventHandler(this.cmbStatusPengiriman_GantiStatus);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(126)))));
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPrint.Location = new System.Drawing.Point(426, 657);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(151, 23);
+            this.btnPrint.TabIndex = 75;
+            this.btnPrint.Text = "Print Resi PDF";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // DetailPaket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(589, 696);
+            this.ClientSize = new System.Drawing.Size(589, 737);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.cmbStatusPengiriman);
             this.Controls.Add(this.btnBatalkanPaket);
             this.Controls.Add(this.label21);
@@ -617,5 +633,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnBatalkanPaket;
         private System.Windows.Forms.ComboBox cmbStatusPengiriman;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

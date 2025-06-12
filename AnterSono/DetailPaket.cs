@@ -10,6 +10,7 @@ namespace AnterSono
     {
         private string resi;
         private int idKurir;
+        private int userId;
 
         public DetailPaket(string resi, int idKurir = 0)
         {
@@ -71,6 +72,8 @@ namespace AnterSono
                     {
                         if (reader.Read())
                         {
+                            this.userId = reader["id_pengirim"] != DBNull.Value ? Convert.ToInt32(reader["id_pengirim"]) : 0;
+
                             txtResi.Text = reader["resi"].ToString();
                             txtNamaBarang.Text = reader["nama_barang"].ToString();
                             txtBerat.Value = reader["berat"] != DBNull.Value ? Convert.ToInt32(reader["berat"]) : 0;
@@ -231,5 +234,73 @@ namespace AnterSono
             }
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // 1. Konstruksi model Paket
+            var paket = new Paket
+            {
+                Resi = txtResi.Text,
+                IdPengirim = this.userId, // atau field lain tempat kamu simpan ID pengirim
+                NamaPenerima = txtNamaPenerima.Text,
+                NoHpPenerima = txtNoHPPenerima.Text,
+                NamaBarang = txtNamaBarang.Text,
+                Berat = txtBerat.Value / 1000m, // asumsikan txtBerat dalam gram
+                AlamatAsal = txtAlamatAsal.Text,
+                AlamatTujuan = txtAlamatTujuan.Text,
+                Jarak = (int)txtJarak.Value,
+                NamaPengirim = txtPengirim.Text,
+                NoHpPengirim = txtNoHPPengirim.Text,
+                HargaTotal = decimal.Parse(txtHargaTotal.Text, System.Globalization.NumberStyles.Currency),
+                MetodePembayaran = txtMetodePembayaran.Text == "COD" ? "COD" : "Non-COD",
+                TipePengiriman = txtTipePengiriman.Text,
+                CreatedAt = DateTime.ParseExact(
+                                      txtCreatedAt.Text,
+                                      "dd MMM yyyy HH:mm",
+                                      System.Globalization.CultureInfo.InvariantCulture)
+            };
+
+            // 2. Ambil logo dari Resources
+            byte[] logoBytes;
+            try
+            {
+                logoBytes = GetLogoBytes();
+            }
+            catch
+            {
+                MessageBox.Show("Gagal memuat logo dari Resources.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 3. Tampilkan SaveFileDialog
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF file|*.pdf";
+                sfd.FileName = $"RESI_{paket.Resi}.pdf";
+
+                if (sfd.ShowDialog() != DialogResult.OK)
+                    return;
+
+                try
+                {
+                    // 4. Generate PDF
+                    PdfResiGenerator.Generate(paket, logoBytes, sfd.FileName);
+                    MessageBox.Show($"PDF resi berhasil disimpan:\n{sfd.FileName}",
+                                    "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Gagal generate PDF:\n{ex.Message}",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private byte[] GetLogoBytes()
+        {
+            // Langsung return resource byte[] tanpa Save
+            return Properties.Resources.AnterSonoLogo;
+        }
     }
+
 }
+

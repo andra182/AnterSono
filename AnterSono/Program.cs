@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuestPDF.Infrastructure;
+using QuestPDF;
 
 namespace AnterSono
 {
@@ -15,6 +17,8 @@ namespace AnterSono
         [STAThread]
         static void Main()
         {
+            QuestPDF.Settings.License = LicenseType.Community;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LandingPage());
