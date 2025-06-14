@@ -236,15 +236,14 @@ namespace AnterSono
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            // 1. Konstruksi model Paket
             var paket = new Paket
             {
                 Resi = txtResi.Text,
-                IdPengirim = this.userId, // atau field lain tempat kamu simpan ID pengirim
+                IdPengirim = this.userId,
                 NamaPenerima = txtNamaPenerima.Text,
                 NoHpPenerima = txtNoHPPenerima.Text,
                 NamaBarang = txtNamaBarang.Text,
-                Berat = txtBerat.Value / 1000m, // asumsikan txtBerat dalam gram
+                Berat = txtBerat.Value / 1000m,
                 AlamatAsal = txtAlamatAsal.Text,
                 AlamatTujuan = txtAlamatTujuan.Text,
                 Jarak = (int)txtJarak.Value,
@@ -259,7 +258,6 @@ namespace AnterSono
                                       System.Globalization.CultureInfo.InvariantCulture)
             };
 
-            // 2. Ambil logo dari Resources
             byte[] logoBytes;
             try
             {
@@ -271,7 +269,6 @@ namespace AnterSono
                 return;
             }
 
-            // 3. Tampilkan SaveFileDialog
             using (var sfd = new SaveFileDialog())
             {
                 sfd.Filter = "PDF file|*.pdf";
@@ -282,7 +279,6 @@ namespace AnterSono
 
                 try
                 {
-                    // 4. Generate PDF
                     PdfResiGenerator.Generate(paket, logoBytes, sfd.FileName);
                     MessageBox.Show($"PDF resi berhasil disimpan:\n{sfd.FileName}",
                                     "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -297,7 +293,6 @@ namespace AnterSono
 
         private byte[] GetLogoBytes()
         {
-            // Langsung return resource byte[] tanpa Save
             return Properties.Resources.AnterSonoLogo;
         }
     }

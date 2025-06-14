@@ -31,18 +31,21 @@ namespace AnterSono
             using (SqlConnection conn = Database.GetConnection())
             {
                 string query = @"
-            SELECT 
-                resi AS [Resi],
-                nama_barang AS [Barang],
-                berat AS [Berat (Kg)],
-                tipe_pengiriman AS [Tipe],
-                jarak AS [Jarak (Km)],
-                harga_total AS [Total Harga],
-                status_pengiriman AS [Status],
-                created_at AS [Dibuat Pada]
-            FROM paket
-            WHERE id_pengirim = @userId
-            ORDER BY created_at DESC";
+                    SELECT 
+                        p.resi AS [Resi],
+                        p.nama_barang AS [Barang],
+                        p.berat AS [Berat (Kg)],
+                        p.tipe_pengiriman AS [Tipe],
+                        p.jarak AS [Jarak (Km)],
+                        p.harga_total AS [Total Harga],
+                        p.status_pengiriman AS [Status],
+                        p.created_at AS [Dibuat Pada],
+                        ISNULL(k.nama_kurir, 'Belum Ada Yang Ditugaskan') AS [Pengirim]
+                    FROM paket p
+                    LEFT JOIN kurir k ON p.id_pengirim = k.id_kurir
+                    WHERE p.id_pengirim = @userId
+                    ORDER BY p.created_at DESC";
+
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -62,10 +65,10 @@ namespace AnterSono
                     {
                         dataGridViewPaket.Columns["Dibuat Pada"].DefaultCellStyle.Format = "dd MMM yyyy HH:mm";
                     }
-
                 }
             }
         }
+
 
         private void DPHome_Load(object sender, EventArgs e)
         {

@@ -134,13 +134,18 @@
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
             this.label9.Location = new System.Drawing.Point(257, 433);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 22);
+            this.label9.Size = new System.Drawing.Size(23, 22);
             this.label9.TabIndex = 41;
-            this.label9.Text = "Kg";
+            this.label9.Text = "Gr";
             // 
             // txtBerat
             // 
             this.txtBerat.Location = new System.Drawing.Point(173, 435);
+            this.txtBerat.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.txtBerat.Name = "txtBerat";
             this.txtBerat.ReadOnly = true;
             this.txtBerat.Size = new System.Drawing.Size(78, 20);

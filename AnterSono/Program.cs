@@ -64,11 +64,11 @@ namespace AnterSono
             switch (jenis)
             {
                 case "regular":
-                    return 20;
+                    return 20000;
                 case "express":
-                    return 10;
+                    return 10000;
                 case "sameday":
-                    return 5;
+                    return 5000;
                 default:
                     throw new ArgumentException("Jenis layanan tidak dikenal.");
             }

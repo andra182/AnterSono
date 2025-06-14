@@ -32,7 +32,6 @@ namespace AnterSono
     {
         public static void Generate(Paket paket, byte[] logoBytes, string outputPath)
         {
-            // generate barcode
             var writer = new BarcodeWriterPixelData
             {
                 Format = BarcodeFormat.CODE_128,
@@ -54,7 +53,6 @@ namespace AnterSono
                 }
             }
 
-            // build PDF
             var doc = Document.Create(container =>
             {
                 container.Page(page =>

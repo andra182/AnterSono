@@ -61,7 +61,7 @@ namespace AnterSono
                             int harga = Convert.ToInt32(reader["harga"]);
                             int max = Convert.ToInt32(reader["berat_max"]);
 
-                            string text = $"{ToTitle(jenis)} (Rp{harga:N0}/Km, Max {max}Kg)";
+                            string text = $"{ToTitle(jenis)} (Rp{harga:N0}/Km, Max {max}Gr)";
                             cmbTipe.Items.Add(new ComboBoxItem(text, jenis, harga, max));
                         }
                     }
@@ -101,7 +101,7 @@ namespace AnterSono
 
             if (berat > selectedItem.MaxBerat)
             {
-                MessageBox.Show($"Berat melebihi maksimum untuk tipe {selectedItem.Value.ToUpper()} (Max {selectedItem.MaxBerat} Kg)", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Berat melebihi maksimum untuk tipe {selectedItem.Value.ToUpper()} (Max {selectedItem.MaxBerat} Gr)", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

@@ -76,6 +76,7 @@
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Print Kurir";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnRefresh
             // 

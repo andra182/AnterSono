@@ -115,12 +115,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AnterSono.Properties.Resources.PDana;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.mtdDana_Click);
             // 
             // panel2
             // 
@@ -135,11 +136,12 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::AnterSono.Properties.Resources.PIndomaret;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(81, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(92, 30);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.mtdIndomaret_Click);
             // 
             // panel3
             // 
@@ -154,11 +156,12 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AnterSono.Properties.Resources.PShopeepay;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(96, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(68, 30);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.mtdSpay_Click);
             // 
             // panel4
             // 
@@ -173,11 +176,12 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AnterSono.Properties.Resources.PGopay;
-            this.pictureBox4.Location = new System.Drawing.Point(27, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(81, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(91, 30);
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.mtdGopay_Click);
             // 
             // panel5
             // 
@@ -192,11 +196,12 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::AnterSono.Properties.Resources.PCod;
-            this.pictureBox5.Location = new System.Drawing.Point(27, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(91, 5);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(70, 30);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.mtdCod_Click);
             // 
             // panel6
             // 

@@ -62,9 +62,9 @@
             this.label2.Font = new System.Drawing.Font("Dubai", 10F);
             this.label2.Location = new System.Drawing.Point(43, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 24);
+            this.label2.Size = new System.Drawing.Size(126, 24);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Berat Maksimal (KG)";
+            this.label2.Text = "Berat Maksimal (Gr)";
             // 
             // txtRegKG
             // 
@@ -120,9 +120,9 @@
             this.label5.Font = new System.Drawing.Font("Dubai", 10F);
             this.label5.Location = new System.Drawing.Point(43, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 24);
+            this.label5.Size = new System.Drawing.Size(126, 24);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Berat Maksimal (KG)";
+            this.label5.Text = "Berat Maksimal (Gr)";
             // 
             // label6
             // 
@@ -164,9 +164,9 @@
             this.label8.Font = new System.Drawing.Font("Dubai", 10F);
             this.label8.Location = new System.Drawing.Point(43, 238);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 24);
+            this.label8.Size = new System.Drawing.Size(126, 24);
             this.label8.TabIndex = 19;
-            this.label8.Text = "Berat Maksimal (KG)";
+            this.label8.Text = "Berat Maksimal (Gr)";
             // 
             // label9
             // 

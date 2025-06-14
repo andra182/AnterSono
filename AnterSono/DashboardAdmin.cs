@@ -92,5 +92,10 @@ namespace AnterSono
             DAMAdmin admin = new DAMAdmin();
             addUserControl(admin);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
